@@ -1,0 +1,19 @@
+<div class="row position-main">
+  <div class="col-md-6 offset-md-3 col-sm-12">
+    <form #form="ngForm" (ngSubmit)="onSubmit()">
+      <div class="form-group row">
+        <label for="pin" class="col-2 col-form-label">Password</label>
+        <div class="col-10">
+          <input type="password" class="form-control" id="pin" name="pin" minlength="9" required ngModel
+                 #Pin="ngModel">
+          <div class="alert alert-danger" *ngIf="Pin.invalid && Pin.touched">
+            <span *ngIf="Pin.errors.required && Pin.touched"
+                  class="help-block">Pin is required</span>
+            <span *ngIf="Pin.touched && Pin.errors.minlength" class="help-block">Pin should be 4 characters</span>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-success">Submit <i class="material-icons" style="vertical-align: middle">send</i></button>
+    </form>
+  </div>
+</div>

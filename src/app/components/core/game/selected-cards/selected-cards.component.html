@@ -1,0 +1,12 @@
+<div class="row" *ngIf="canShow();">
+  <div class="col-12">
+    <h5>Selected Cards</h5>
+  </div>
+</div>
+<div class="row" [@listAnimation]="cards.length">
+  <div class="col-md-3 col-6" *ngFor="let c of cards">
+    <div class="card">
+      <img [src]="c.imgUrl" alt="Image" class="fit-image">
+    </div>
+  </div>
+</div>
